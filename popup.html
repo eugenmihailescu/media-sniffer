@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="color-scheme" content="light dark">
+  <title>MediaSniffer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body data-view="main">
+  <header class="header">
+    <img class="logo" src="icons/icon48.png" alt="" width="22" height="22">
+    <div class="heading">
+      <h1>MediaSniffer</h1>
+      <p id="page" class="page">This tab</p>
+    </div>
+    <p id="count" class="count" hidden></p>
+  </header>
+
+  <section class="controls">
+    <label class="toggle">
+      <input id="continuous" type="checkbox">
+      <span class="switch" aria-hidden="true"></span>
+      <span class="toggle-copy">
+        <span class="toggle-title">Continuous detection for this tab</span>
+        <span class="toggle-help">Off by default. Watches only this tab.</span>
+      </span>
+    </label>
+    <button id="scan" class="scan" type="button">Scan this tab</button>
+  </section>
+
+  <p id="status" class="status" role="status" hidden></p>
+  <div id="list" class="list" aria-live="polite">
+    <p class="empty">No media detected yet — click Scan this tab.</p>
+  </div>
+  <footer class="footer">
+    <p class="footnote">DRM, encrypted media, and pure in-memory buffers can’t be saved.</p>
+    <button id="history-open" class="text-link" type="button" hidden>Download history</button>
+  </footer>
+  <section id="history-view" hidden>
+    <div class="history-bar">
+      <button id="history-back" class="text-link" type="button">Back</button>
+      <h2>Download history</h2>
+    </div>
+    <div id="history-list" class="list" aria-live="polite"></div>
+    <p class="footnote history-note">Saved addresses can expire. Download again while they still work.</p>
+  </section>
+  <script src="common.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
